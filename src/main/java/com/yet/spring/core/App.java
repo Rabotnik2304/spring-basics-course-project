@@ -38,19 +38,19 @@ public class App {
     
     public void logEvents(ApplicationContext ctx) {
         Event event = ctx.getBean(Event.class);
-        logEvent(EventType.INFO, event, "Some event for 1");
+        logEvent(EventType.INFO, event, "One more INFO event for 1");
         
         event = ctx.getBean(Event.class);
-        logEvent(EventType.INFO, event, "One more event for 1");
+        logEvent(EventType.INFO, event, "And one more INFO event for 1");
         
         event = ctx.getBean(Event.class);
-        logEvent(EventType.INFO, event, "And one more event for 1");
-        
-        event = ctx.getBean(Event.class);
-        logEvent(EventType.ERROR, event, "Some event for 2");
+        logEvent(EventType.ERROR, event, "Some ERROR event for 2.2");
 
         event = ctx.getBean(Event.class);
-        logEvent(null, event, "Some event for 3");
+        logEvent(EventType.ERROR, event, "THIRD ERROR");
+
+        event = ctx.getBean(Event.class);
+        logEvent(null, event, "Some null event for 3");
 
         event = ctx.getBean(Event.class);
         logEvent(EventType.DbINFO, event, "Some event for database, but this is unique");
