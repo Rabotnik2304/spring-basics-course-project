@@ -69,7 +69,7 @@ public class App {
     }
 
     private void logEvent(EventType eventType, Event event, String msg) {
-        String message = msg.replaceAll(client.getId(), client.getFullName());
+        String message = msg.replaceAll(client.getId(), String.format("%s, from %s", client.getFullName(),client.getCity()));
         event.setMsg(message);
         
         EventLogger logger = loggers.get(eventType);
